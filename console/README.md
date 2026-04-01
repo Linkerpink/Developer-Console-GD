@@ -1,5 +1,5 @@
 ﻿
-# Welcome to the Developer Console for Godot made by Linkerpink!
+# Developer Console for Godot
 This is a developer console / terminal window you can put into your Godot project. This console will be able to run some pre made commands, but you can also add your own commands to it if you please.
 
 ## inspiration:
