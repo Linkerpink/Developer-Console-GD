@@ -6,8 +6,22 @@ This is a developer console / terminal window you can put into your Godot projec
 this console / terminal is mostly inspired by the Source Engine's Developer Console, but also a bit by classic terminal Windows like command prompt or the Linux terminal.
 
 # Getting started:
+
+## Adding Developer Console as a Global Scene
+Adding a global script or scene in Godot is a way for a script or scene to run in every scene in the entire project. The console is supposed to be runnable in every scene so you won't have to add it manually in every scene.
+To add the Development Console as a Global Scene go to: **Project/Project Settings/Globals**.
+![Open Project Settings](https://linkerpink.github.io/public/console/console_open_project_settings.jpg)
+
+![Make Global](https://linkerpink.github.io/public/console/make_global.jpg)
+
+
+As the path you'll have to choose the path to the **console.tscn** scene. Default path = **res://console/assets/console.tscn**. Make sure you don't accidentally add the **console.gd** script. The console relies on everything that's in the scene, like the console window and layout.
+
+As the name you can do whatever you want, then click on **+ Add**
+
+## Adding Inputs in Input Map
 To get started you have to add the Input Map for opening and closing the Console.  To do this you need to open the project settings and switch to the tab: **Input Map**. 
-![enter image description here](https://linkerpink.github.io/public/console/console_open_project_settings.jpg)
+![Open Project Settings](https://linkerpink.github.io/public/console/console_open_project_settings.jpg)
 
 When you're there you can add a new action, give it a name and click on **+ Add**. It should appear in the window down below.
  ![enter image description here](https://linkerpink.github.io/public/console/console_input_map_setup.jpg)
