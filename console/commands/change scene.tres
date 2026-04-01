@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Command" format=3 uid="uid://cmq2ja6pyvw7k"]
+
+[ext_resource type="Script" uid="uid://cjxafw1b1cxrp" path="res://console/assets/command.gd" id="1_wh7bw"]
+
+[resource]
+script = ExtResource("1_wh7bw")
+name = "cs"
+description = "Changes the scene to a new one."
+detailed_explaination = "Changes the scene to your desired scene. This must be a scene that's in the project and placed in the [color=yellow]res://scenes/[/color] folder. You don't have to put [color=yellow].tscn[/color] after it, because the Console is designed to save time."
+function_to_trigger = "change_scene"
+metadata/_custom_type_script = "uid://cjxafw1b1cxrp"

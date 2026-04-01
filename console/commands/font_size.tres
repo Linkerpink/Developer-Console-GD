@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Command" format=3 uid="uid://ctqqr30xw7teh"]
+
+[ext_resource type="Script" uid="uid://cjxafw1b1cxrp" path="res://console/assets/command.gd" id="1_foend"]
+
+[resource]
+script = ExtResource("1_foend")
+name = "font size"
+description = "Changes the font size to the number you put in. for example: you can type [color=cyan]font size 12[/color]. That will set the font size to 12px"
+detailed_explaination = "Clears the Console"
+function_to_trigger = "set_font_size"
+metadata/_custom_type_script = "uid://cjxafw1b1cxrp"

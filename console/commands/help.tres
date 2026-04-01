@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Command" format=3 uid="uid://d2ov3c8dm8i14"]
+
+[ext_resource type="Script" uid="uid://cjxafw1b1cxrp" path="res://console/assets/command.gd" id="1_20cx2"]
+
+[resource]
+script = ExtResource("1_20cx2")
+name = "help"
+description = "Shows help menu"
+detailed_explaination = "Gives a few basic commands to get you started and some things to know so you don't get lost in this [color=red][shake rate=50 level=10]scary looking Console[/shake][/color]"
+function_to_trigger = "print_help_message"
+metadata/_custom_type_script = "uid://cjxafw1b1cxrp"

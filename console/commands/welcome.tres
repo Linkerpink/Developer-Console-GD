@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Command" format=3 uid="uid://73oca0ivjjdf"]
+
+[ext_resource type="Script" uid="uid://cjxafw1b1cxrp" path="res://console/assets/command.gd" id="1_gja4i"]
+
+[resource]
+script = ExtResource("1_gja4i")
+name = "welcome"
+description = "Prints the welcome message to the Console, in case you want to see it again. This is the same message you saw when starting up the console, before you clear it."
+detailed_explaination = "Shows welcome message (start message)"
+function_to_trigger = "print_welcome_message"
+metadata/_custom_type_script = "uid://cjxafw1b1cxrp"

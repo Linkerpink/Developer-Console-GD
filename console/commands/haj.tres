@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Command" format=3 uid="uid://b8nx44jipvdck"]
+
+[ext_resource type="Script" uid="uid://cjxafw1b1cxrp" path="res://console/assets/command.gd" id="1_rqslg"]
+
+[resource]
+script = ExtResource("1_rqslg")
+name = "haj"
+easter_egg = true
+function_to_trigger = "haj"
+metadata/_custom_type_script = "uid://cjxafw1b1cxrp"

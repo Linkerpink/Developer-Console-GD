@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Command" format=3 uid="uid://ds30bi3j8j2go"]
+
+[ext_resource type="Script" uid="uid://cjxafw1b1cxrp" path="res://console/assets/command.gd" id="1_caklq"]
+
+[resource]
+script = ExtResource("1_caklq")
+name = "all spawnables"
+description = "Shows all spawnable scenes (objects)"
+detailed_explaination = "Shows all spawnable scenes (objects)"
+function_to_trigger = "print_spawnable_scenes"
+metadata/_custom_type_script = "uid://cjxafw1b1cxrp"

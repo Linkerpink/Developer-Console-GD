@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://ckxm2uh0u4xcl"]
+
+[ext_resource type="Script" uid="uid://cwosdtjmtwpd6" path="res://console/console.gd" id="1_sg4m6"]
+[ext_resource type="FontFile" uid="uid://eglbqyap1a4r" path="res://console/COMICBD.TTF" id="2_sjluo"]
+[ext_resource type="Script" uid="uid://cayi03iwmj0ja" path="res://console/desktop_thing.gd" id="3_hedou"]
+[ext_resource type="PackedScene" uid="uid://4dycpvpuan7v" path="res://scenes/taser.tscn" id="3_lk25g"]
+[ext_resource type="Texture2D" uid="uid://b8qpl7pxjodse" path="res://icon.svg" id="4_lk25g"]
+[ext_resource type="PackedScene" uid="uid://lsgs2s8pgbtf" path="res://scenes/objects/door.tscn" id="4_miicl"]
+[ext_resource type="PackedScene" uid="uid://cumr3hvv75sdt" path="res://scenes/objects/cube.tscn" id="5_e63wg"]
+[ext_resource type="PackedScene" uid="uid://4kduq3hpeiu4" path="res://scenes/audio_player.tscn" id="5_miicl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6k7n"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 35
+border_color = Color(0.59098655, 0.84744436, 0.92271537, 1)
+expand_margin_top = 31.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tk5gh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Console" type="CanvasLayer" unique_id=1279527173]
+script = ExtResource("1_sg4m6")
+spawnable_objects = Array[PackedScene]([ExtResource("3_lk25g"), ExtResource("4_miicl"), ExtResource("5_miicl"), ExtResource("5_e63wg"), ExtResource("5_e63wg")])
+comic_sans = ExtResource("2_sjluo")
+
+[node name="Console Window" type="Window" parent="." unique_id=1205565824]
+oversampling_override = 1.0
+title = "Console"
+position = Vector2i(16, 32)
+size = Vector2i(1200, 680)
+
+[node name="Console BG" type="ColorRect" parent="Console Window" unique_id=2032005724]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.39215687, 0.39215687, 0.39215687, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Console Window" unique_id=351238513]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 28
+
+[node name="Control" type="VBoxContainer" parent="Console Window/MarginContainer" unique_id=659944921]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 2
+
+[node name="Console BG" type="ColorRect" parent="Console Window/MarginContainer/Control" unique_id=1230856314]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Console Window/MarginContainer/Control/Console BG" unique_id=86124177]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+follow_focus = true
+scroll_hint_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Console Window/MarginContainer/Control/Console BG/ScrollContainer" unique_id=1355837252]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="Console Text" type="RichTextLabel" parent="Console Window/MarginContainer/Control/Console BG/ScrollContainer/MarginContainer" unique_id=455905768]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 2
+bbcode_enabled = true
+scroll_following = true
+scroll_following_visible_characters = true
+selection_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Console Window/MarginContainer/Control" unique_id=836819854]
+layout_mode = 2
+theme_override_constants/separation = 28
+alignment = 2
+
+[node name="LineEdit" type="LineEdit" parent="Console Window/MarginContainer/Control/HBoxContainer" unique_id=1535868490]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "enter command"
+
+[node name="Submit Button" type="Button" parent="Console Window/MarginContainer/Control/HBoxContainer" unique_id=1400132172]
+layout_mode = 2
+text = "submit"
+
+[node name="Haj" type="Window" parent="." unique_id=1552903198]
+transparent_bg = true
+oversampling_override = 1.0
+title = "Drag here:"
+position = Vector2i(0, 36)
+visible = false
+min_size = Vector2i(32, 32)
+content_scale_mode = 2
+theme_override_constants/title_outline_size = 8
+theme_override_font_sizes/title_font_size = 13
+theme_override_styles/embedded_border = SubResource("StyleBoxFlat_t6k7n")
+theme_override_styles/embedded_unfocused_border = SubResource("StyleBoxFlat_tk5gh")
+script = ExtResource("3_hedou")
+
+[node name="TextureRect" type="TextureRect" parent="Haj" unique_id=1957577778]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_lk25g")
+expand_mode = 1
+
+[connection signal="close_requested" from="Console Window" to="." method="_close_console"]
+[connection signal="meta_clicked" from="Console Window/MarginContainer/Control/Console BG/ScrollContainer/MarginContainer/Console Text" to="." method="_on_console_text_meta_clicked"]
+[connection signal="pressed" from="Console Window/MarginContainer/Control/HBoxContainer/Submit Button" to="." method="_submit_to_console"]
+[connection signal="close_requested" from="Haj" to="Haj" method="_on_close_requested"]

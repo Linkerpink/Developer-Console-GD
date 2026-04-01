@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://db7sqc0n44a8g"]
+
+[node name="ConsoleTest" type="Control" unique_id=1278083909]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=505770160]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=2082788354]
+layout_mode = 2
+bbcode_enabled = true
+text = "[font_size=32]To set up the Developer Console, you have to do these things:[/font_size]
+
+[font_size=26]1. Make sure the developer console is set as a Global. [/font_size]
+in [color=yellow]\"Project/Project settings/Globals\"[/color], select the [color=yellow]\"Console.tscn\"[/color] scene as the path, give it the name you want to use [color=gray](default = \"Console\")[/color] and then click \"[color=yellow]+ Add\"[/color]
+
+[font_size=26]2. Make sure the Input Maps are set up. [/font_size]
+in [color=yellow]\"Project/Project settings/Input Map\"[/color], add these 3 Inputs:
+[color=yellow]console_open[/color] - [color=gray]default key = `
+[color=yellow]console_close[/color] - [color=gray]default key = ESC
+[color=yellow]console_enter[/color] - [color=gray]default key = ENTER[/color]
+
+[color=white][font_size=32]For more information (ex: adding custom commands), look at the [color=yellow]README.md[/color] file."
+horizontal_alignment = 1
+vertical_alignment = 1

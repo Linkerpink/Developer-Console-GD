@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Command" format=3 uid="uid://bny82grst1euh"]
+
+[ext_resource type="Script" uid="uid://cjxafw1b1cxrp" path="res://console/assets/command.gd" id="1_owo02"]
+
+[resource]
+script = ExtResource("1_owo02")
+name = "noclip"
+description = "Enables or disables noclip."
+detailed_explaination = "Enables or disables [color=cyan]noclip[/color]. When enabled, the [color=green]player[/color] will be able to fly around without physics or collisions."
+function_to_trigger = "noclip_player"
+metadata/_custom_type_script = "uid://cjxafw1b1cxrp"

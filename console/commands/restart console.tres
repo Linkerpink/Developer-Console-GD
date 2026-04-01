@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Command" format=3 uid="uid://dht1flp8dx22j"]
+
+[ext_resource type="Script" uid="uid://cjxafw1b1cxrp" path="res://console/assets/command.gd" id="1_7pwv1"]
+
+[resource]
+script = ExtResource("1_7pwv1")
+name = "restart console"
+description = "Restarts the Console."
+detailed_explaination = "Restarts the Console."
+function_to_trigger = "start_console"
+metadata/_custom_type_script = "uid://cjxafw1b1cxrp"

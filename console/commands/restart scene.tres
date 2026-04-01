@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Command" format=3 uid="uid://bt3udoqet0o3o"]
+
+[ext_resource type="Script" uid="uid://cjxafw1b1cxrp" path="res://console/assets/command.gd" id="1_r2nv7"]
+
+[resource]
+script = ExtResource("1_r2nv7")
+name = "restart scene"
+description = "Restarts the current scene"
+detailed_explaination = "Restarts the current scene"
+function_to_trigger = "restart_scene"
+metadata/_custom_type_script = "uid://cjxafw1b1cxrp"

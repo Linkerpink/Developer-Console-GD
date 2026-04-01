@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Command" format=3 uid="uid://dtyycie12r2e8"]
+
+[ext_resource type="Script" uid="uid://cjxafw1b1cxrp" path="res://console/assets/command.gd" id="1_uy764"]
+
+[resource]
+script = ExtResource("1_uy764")
+name = "prints"
+description = "Prints something to the screen."
+detailed_explaination = "Prints a message you type to the screen kind of like unreal's print to screen function (also visible when console is closed)."
+function_to_trigger = "print_to_screen_as_user"
+metadata/_custom_type_script = "uid://cjxafw1b1cxrp"

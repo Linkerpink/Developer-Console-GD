@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Command" format=3 uid="uid://bqk8kcllp5th6"]
+
+[ext_resource type="Script" uid="uid://cjxafw1b1cxrp" path="res://console/assets/command.gd" id="1_3xh2r"]
+
+[resource]
+script = ExtResource("1_3xh2r")
+name = "explain"
+description = "Explains the command you put after it."
+detailed_explaination = "Explains a command, but why are you asking to explain [color=cyan]explain[/color]???"
+function_to_trigger = "explain"
+metadata/_custom_type_script = "uid://cjxafw1b1cxrp"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Command" format=3 uid="uid://cq63ddp68y5iw"]
+
+[ext_resource type="Script" uid="uid://cjxafw1b1cxrp" path="res://console/assets/command.gd" id="1_jauy2"]
+
+[resource]
+script = ExtResource("1_jauy2")
+name = "unsans"
+easter_egg = true
+function_to_trigger = "unsans_console"
+metadata/_custom_type_script = "uid://cjxafw1b1cxrp"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Command" format=3 uid="uid://i36np5yl4e0i"]
+
+[ext_resource type="Script" uid="uid://cjxafw1b1cxrp" path="res://console/assets/command.gd" id="1_bd7nj"]
+
+[resource]
+script = ExtResource("1_bd7nj")
+name = "languages"
+description = "Gives a list of every language supported."
+detailed_explaination = "Gives a list of every language supported."
+metadata/_custom_type_script = "uid://cjxafw1b1cxrp"

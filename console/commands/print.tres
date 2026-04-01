@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Command" format=3 uid="uid://tf5mbgtew4mo"]
+
+[ext_resource type="Script" uid="uid://cjxafw1b1cxrp" path="res://console/assets/command.gd" id="1_afgq2"]
+
+[resource]
+script = ExtResource("1_afgq2")
+name = "print"
+description = "Prints something to the Console"
+detailed_explaination = "Prints a message you type to the Console. This has support for Godot's [color=yellow][url https://docs.godotengine.org/en/latest/tutorials/ui/bbcode_in_richtextlabel.html BBCode functions.]BBCode functions.[/url][/color] These allow for text effects like [color=light green]changing text color[/color], [font_size=14]changing font size[/font_size] or text effects [rainbow][tornado freq=5 radius=2.5]like this![/tornado][/rainbow]"
+function_to_trigger = "print_as_user"
+metadata/_custom_type_script = "uid://cjxafw1b1cxrp"

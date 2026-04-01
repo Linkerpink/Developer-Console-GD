@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Command" format=3 uid="uid://o132ibhyj4by"]
+
+[ext_resource type="Script" uid="uid://cjxafw1b1cxrp" path="res://console/assets/command.gd" id="1_lqra0"]
+
+[resource]
+script = ExtResource("1_lqra0")
+name = "markiplier"
+easter_egg = true
+function_to_trigger = "markiplier"
+metadata/_custom_type_script = "uid://cjxafw1b1cxrp"

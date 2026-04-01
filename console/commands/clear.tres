@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Command" format=3 uid="uid://b6rrqxepoqkld"]
+
+[ext_resource type="Script" uid="uid://cjxafw1b1cxrp" path="res://console/assets/command.gd" id="1_iwqof"]
+
+[resource]
+script = ExtResource("1_iwqof")
+name = "clear"
+short_name = "c"
+description = "Clears the console of everything that was in it."
+detailed_explaination = "Clears the Console"
+function_to_trigger = "clear"
+metadata/_custom_type_script = "uid://cjxafw1b1cxrp"
