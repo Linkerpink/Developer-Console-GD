@@ -327,7 +327,7 @@ func print_all_commands():
 #endregion
 
 
-#region Game Specific Commands (All commands for your specific project. These are commented out lines from the game I'm working on. You can delete them if you want, or keep them if you want.
+#region Console Specific Commands (All commands for your specific project. These are commented out lines from the game I'm working on. You can delete them if you want, or keep them if you want.
 func noclip_player():
 	print_to_console("This is a game / project specific command. If you'd like to change it to work with your game, then change this function. You can look at the commented lines of code for my game as a reference, and tweak it to work with your game.", 0.1)
 	#var _player = get_tree().get_first_node_in_group("player")
@@ -344,6 +344,12 @@ func noclip_player():
 		#_player.enable_movement.emit()
 		#print_to_console("noclip [color=red]disabled[/color].", 0.1)
 		#print_to_screen("noclip [color=red]disabled[/color].", 0.1, 5.1)
+
+
+func epic():
+	print_to_console("[shake rate=50 level=15][color=yellow] OMG [/color][/shake]", 0.1)
+	print_to_console("[tornado radius=5.0 freq=2.5 connected=1][rainbow] this is EPIC[/rainbow] [/tornado]", 0.2)
+
 #endregion
 
 
