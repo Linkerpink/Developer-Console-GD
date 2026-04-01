@@ -273,6 +273,11 @@ func spawn_scene():
 	print_to_console("Spawned: [color=yellow]" + str(_object_to_spawn) + "[/color]", 0.1)
 
 
+func go_to_docs():
+	OS.shell_open("https://linkerpink.github.io/docs/console")
+	print_to_console("Opening documentation page.", 0.1)
+
+
 #region Print Messages
 func print_as_user():
 	print_to_console(u_text.replace("print ", ""), 0.1)
@@ -301,6 +306,7 @@ Press [color=yellow]ESC[/color] to exit the Console
 [color=cyan]clear[/color]: Clears the Console
 [color=cyan]print[/color]: Prints something to the Console
 [color=cyan]explain[/color]: Explains the command you put after it.
+[color=cyan]docs[/color]: Goes to the documentation page for the Console.
 " + _create_line(), 0.1)
 
 

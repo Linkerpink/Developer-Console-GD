@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Command" format=3 uid="uid://b01r5i4ncpmtu"]
+
+[ext_resource type="Script" uid="uid://cjxafw1b1cxrp" path="res://console/assets/command.gd" id="1_eqrcv"]
+
+[resource]
+script = ExtResource("1_eqrcv")
+name = "docs"
+description = "Opens the documentation page"
+detailed_explaination = "Opens the documentation page of the Console. Useful if you wanna make a custom command, or just look around how this all works."
+function_to_trigger = "go_to_docs"
+metadata/_custom_type_script = "uid://cjxafw1b1cxrp"
