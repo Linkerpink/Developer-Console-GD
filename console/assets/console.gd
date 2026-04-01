@@ -12,8 +12,9 @@ extends CanvasLayer
 var open : bool = false
 
 var default_console_window_size : Vector2
-@export var default_console_font_size : int
+@export var default_console_font_size : int = 16
 var u_text : String # The text from the user (line_edit.text)
+@export var room_scenes_path : String = "res://scenes/rooms/"
 
 var commands : Array[Command]
 var active_command : Command
@@ -229,7 +230,7 @@ func clear():
 
 func change_scene():
 	var _new_scene
-	_new_scene = "res://scenes/rooms/" + line_edit.text.replace("cs ", "") + ".tscn"
+	_new_scene = room_scenes_path + line_edit.text.replace("cs ", "") + ".tscn"
 	
 	if ResourceLoader.exists(_new_scene):
 		get_tree().change_scene_to_file(_new_scene)
