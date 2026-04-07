@@ -137,84 +137,6 @@ func _check_commands():
 	
 	#TODO look at this stuff later
 	#region Old Commands that still need to be reworked.
-	##region A Discolored World Specific Commands
-		##elif _command_to_explain == "set language":
-			##print_to_console("
-##[color=cyan]set language[/color]: Sets the language to what you typed in the console.
-##As an example you could type: [color=cyan]set language italian[/color] and that would change the language to Italian.
-##You can also type the language name in that language. 
-##as an example you could type: [color=cyan]set language italiano[/color] and that would also change it to Italian.
-##\n" + _create_line(), 0.1)
-			##
-		##elif _command_to_explain == "languages":
-			##print_to_console("[color=cyan]languages[/color]: Gives a list of every language supported.\n" + _create_line(), 0.1)
-	##endregion
-	#
-	##region Language Commands
-		##elif _text.begins_with("languages"):
-		##print_to_console("
-##Here is a list of supported languages:
-##English,
-##Dutch / Nederlands,
-##German / Deutsch
-##French / Français
-##Spanish / Español
-##Italian / Italiano
-##Portuguese / Português
-##Danish / Dansk
-##Swedish / Svenska
-##Finnish / Suomalainen
-##Czech / čeština
-##Chinese / 國語
-		##", 0.1)
-		##return true
-		#
-	##elif _text.begins_with("set language"):
-		##if _text.ends_with("english") or _text.ends_with("English"):
-			##globals.set_language("english")
-			##
-		##elif _text.ends_with("dutch") or _text.ends_with("Dutch") or _text.ends_with("nederlands") or _text.ends_with("Nederlands"):
-			##globals.set_language("dutch")
-			##
-		##elif _text.ends_with("german") or _text.ends_with("German") or _text.ends_with("deutsch") or _text.ends_with("Deutsch"):
-			##globals.set_language("german")
-		##
-		##elif _text.ends_with("french") or _text.ends_with("French") or _text.ends_with("français") or _text.ends_with("Français"):
-			##globals.set_language("french") 
-		##
-		##elif _text.ends_with("spanish") or _text.ends_with("Spanish") or _text.ends_with("español") or _text.ends_with("Español"):
-			##globals.set_language("spanish")
-		##
-		##elif _text.ends_with("italian") or _text.ends_with("Italian") or _text.ends_with("italiano") or _text.ends_with("Italiano"):
-			##globals.set_language("italian")
-		##
-		##elif _text.ends_with("portuguese") or _text.ends_with("portugese") or _text.ends_with("Portuguese") or _text.ends_with("português") or _text.ends_with("Português"):
-			##globals.set_language("portugese")
-			##
-		##elif _text.ends_with("danish") or _text.ends_with("Danish") or _text.ends_with("dansk") or _text.ends_with("Dansk"):
-			##globals.set_language("danish")
-		##
-		##elif _text.ends_with("swedish") or _text.ends_with("Swedish") or _text.ends_with("svenska") or _text.ends_with("Svenska"):
-			##globals.set_language("swedish")
-		##
-		##elif _text.ends_with("finnish") or _text.ends_with("Finnish") or _text.ends_with("suomalainen") or _text.ends_with("Suomalainen"):
-			##globals.set_language("finnish")
-		##
-		##elif _text.ends_with("czech") or _text.ends_with("Czech") or _text.ends_with("čeština") or _text.ends_with("cestina"):
-			##globals.set_language("czech")
-		##
-		##elif _text.ends_with("chinese") or _text.ends_with("Chinese") or _text.ends_with("國語"):
-			##globals.set_language("chinese")
-		##
-		### Easter egg languages
-		##elif _text.ends_with("minionese") or _text.ends_with("Minionese") or _text.ends_with("minion") or _text.ends_with("minion language"):
-			##globals.set_language("minionese")
-		##
-		##print_to_console("App language is set to: " + globals.language, 0.1)
-		##
-		##return true
-	##endregion
-	
 	##elif _text == "minion" or _text == "minionese":
 		##globals.set_language("minionese")
 		##print_to_console("App language is set to: " + globals.language, 0.1)
@@ -277,6 +199,69 @@ func go_to_docs():
 	OS.shell_open("https://linkerpink.github.io/docs/console")
 	print_to_console("Opening documentation page.", 0.1)
 
+#region Language Commands
+func set_language():
+	print_to_console("language commands not set up.", 0.1)
+	#if _text.ends_with("english") or _text.ends_with("English"):
+			#globals.set_language("english")
+			#
+		#elif _text.ends_with("dutch") or _text.ends_with("Dutch") or _text.ends_with("nederlands") or _text.ends_with("Nederlands"):
+			#globals.set_language("dutch")
+			#
+		#elif _text.ends_with("german") or _text.ends_with("German") or _text.ends_with("deutsch") or _text.ends_with("Deutsch"):
+			#globals.set_language("german")
+		#
+		#elif _text.ends_with("french") or _text.ends_with("French") or _text.ends_with("français") or _text.ends_with("Français"):
+			#globals.set_language("french") 
+		#
+		#elif _text.ends_with("spanish") or _text.ends_with("Spanish") or _text.ends_with("español") or _text.ends_with("Español"):
+			#globals.set_language("spanish")
+		#
+		#elif _text.ends_with("italian") or _text.ends_with("Italian") or _text.ends_with("italiano") or _text.ends_with("Italiano"):
+			#globals.set_language("italian")
+		#
+		#elif _text.ends_with("portuguese") or _text.ends_with("portugese") or _text.ends_with("Portuguese") or _text.ends_with("português") or _text.ends_with("Português"):
+			#globals.set_language("portugese")
+			#
+		#elif _text.ends_with("danish") or _text.ends_with("Danish") or _text.ends_with("dansk") or _text.ends_with("Dansk"):
+			#globals.set_language("danish")
+		#
+		#elif _text.ends_with("swedish") or _text.ends_with("Swedish") or _text.ends_with("svenska") or _text.ends_with("Svenska"):
+			#globals.set_language("swedish")
+		#
+		#elif _text.ends_with("finnish") or _text.ends_with("Finnish") or _text.ends_with("suomalainen") or _text.ends_with("Suomalainen"):
+			#globals.set_language("finnish")
+		#
+		#elif _text.ends_with("czech") or _text.ends_with("Czech") or _text.ends_with("čeština") or _text.ends_with("cestina"):
+			#globals.set_language("czech")
+		#
+		#elif _text.ends_with("chinese") or _text.ends_with("Chinese") or _text.ends_with("國語"):
+			#globals.set_language("chinese")
+		#
+		## Easter egg languages
+		#elif _text.ends_with("minionese") or _text.ends_with("Minionese") or _text.ends_with("minion") or _text.ends_with("minion language"):
+			#globals.set_language("minionese")
+		#
+		#print_to_console("App language is set to: " + globals.language, 0.1)
+		
+
+
+func print_languages():
+	print_to_console("language commands not set up.", 0.1)
+	#print_to_console("Here is a list of supported languages:", 0.1)
+	#print_to_console("English", 0.2)
+	#print_to_console("Dutch / Nederlands", 0.3)
+	#print_to_console("German / Deutsch", 0.4)
+	#print_to_console("French / Français", 0.5)
+	#print_to_console("Spanish / Español", 0.6)
+	#print_to_console("Italian / Italiano", 0.6)
+	#print_to_console("Portuguese / Português", 0.7)
+	#print_to_console("Danish / Dansk", 0.8)
+	#print_to_console("Swedish / Svenska", 0.9)
+	#print_to_console("Finnish / Suomalainen", 1)
+	#print_to_console("Czech / čeština", 1.1)
+	#print_to_console("Chinese / 國語", 1.2)
+
 
 #region Print Messages
 func print_as_user():
@@ -296,6 +281,40 @@ func print_spawnable_scenes():
 	print_to_console(_create_line() + "\n[font_size=32]All spawnable objects:[/font_size]", 0.1)
 	for i in spawnable_objects.size():
 		print_to_console(_get_name_from_path(spawnable_objects[i]), i * 0.1 + 0.1)
+
+
+func gdfetch():
+	var _art : String = "[font_size=10][code][color=deep_sky_blue]
+...........++++.....++++...........
+..........++++++...++++++..........				OS:
+..........+++++++++++++++..........				Host:
+....++..+++++++++++++++++++..++....				Kernal:
+..+++++++++++++++++++++++++++++++..				Uptime:
+.+++++++++++++++++++++++++++++++++.				Packages:
+..+++++++++++++++++++++++++++++++..				Shell:
+...++++*%%%##+++++++++##%%%*++++...				Display:
+...++++@#---#*++*@*++*#---#@++++...				Terminal:
+...++++#%---#+++#@#+++#---%#++++...				CPU:
+...++++++##*++++*#*++++*##++++++...				GPU:
+...##****+++++++++++++++++****##...				Memory:
+...+++++@*++++@@%%%@@++++*@+++++...				Swap:
+...+++++#%####@+++++@####%#+++++...				Disk:
+....+++++++++++++++++++++++++++....				Local IP:
+.....++++++++++++++++++++++++......				Locale:
+.........+++++++++++++++++.........
+[color=][font_size=][font=]"
+	
+	
+	var _dots_to_space = _art.replace(".", " ")
+	var _stars = _dots_to_space.replace("*", "[color=white]*[color=deep_sky_blue]")
+	var _percent = _stars.replace("%", "[color=white]%[color=deep_sky_blue]")
+	var _hash = _percent.replace("#", "[color=white]#[color=deep_sky_blue]")
+	var _at = _hash.replace("@", "[color=white]@[color=deep_sky_blue]")
+	var _minus = _at.replace("-", "[color=white]-[color=deep_sky_blue]")
+	
+	var _string_to_print = _minus
+	# ^ By far the worst way to code this ever 😭
+	print_to_console(_string_to_print, 0.1)
 
 
 func print_help_message():

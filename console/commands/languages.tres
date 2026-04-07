@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_bd7nj")
 name = "languages"
-description = "Gives a list of every language supported."
-detailed_explaination = "Gives a list of every language supported."
+description = "[color=cyan]languages[/color]: Gives a list of every language supported."
+detailed_explaination = "[color=cyan]languages[/color]: Gives a list of every language supported."
+function_to_trigger = "print_languages"
 metadata/_custom_type_script = "uid://cjxafw1b1cxrp"

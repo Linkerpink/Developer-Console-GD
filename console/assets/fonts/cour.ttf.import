@@ -2,18 +2,18 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://eglbqyap1a4r"
-path="res://.godot/imported/COMICBD.TTF-16f4a2cd3e419b10a0d1093b7a11e887.fontdata"
+uid="uid://qmx8d6ykid6n"
+path="res://.godot/imported/cour.ttf-a3005255cee0e3a2d75878536830f6c4.fontdata"
 
 [deps]
 
-source_file="res://console/assets/COMICBD.TTF"
-dest_files=["res://.godot/imported/COMICBD.TTF-16f4a2cd3e419b10a0d1093b7a11e887.fontdata"]
+source_file="res://console/assets/fonts/cour.ttf"
+dest_files=["res://.godot/imported/cour.ttf-a3005255cee0e3a2d75878536830f6c4.fontdata"]
 
 [params]
 
 Rendering=null
-antialiasing=0
+antialiasing=1
 generate_mipmaps=false
 disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
@@ -30,12 +30,7 @@ Fallbacks=null
 fallbacks=[]
 Compress=null
 compress=true
-preload=[{
-"chars": [],
-"glyphs": [],
-"name": "New Configuration",
-"size": Vector2i(16, 0)
-}]
+preload=[]
 language_support={}
 script_support={}
 opentype_features={}

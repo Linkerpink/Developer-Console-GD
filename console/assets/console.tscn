@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cwosdtjmtwpd6" path="res://console/assets/console.gd" id="1_sg4m6"]
 [ext_resource type="PackedScene" uid="uid://d3engya7r866b" path="res://console/assets/screen_message_label.tscn" id="2_hedou"]
-[ext_resource type="FontFile" uid="uid://eglbqyap1a4r" path="res://console/assets/COMICBD.TTF" id="2_sjluo"]
+[ext_resource type="FontFile" uid="uid://eglbqyap1a4r" path="res://console/assets/fonts/COMICBD.TTF" id="2_sjluo"]
 [ext_resource type="Script" uid="uid://cayi03iwmj0ja" path="res://console/assets/desktop_thing.gd" id="3_hedou"]
 [ext_resource type="Texture2D" uid="uid://dhvv1lgwrhj6r" path="res://icon.svg" id="4_lk25g"]
+[ext_resource type="FontFile" uid="uid://wq52qo180gc6" path="res://console/assets/fonts/courbd.ttf" id="5_yu5lb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6k7n"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -23,7 +24,7 @@ comic_sans = ExtResource("2_sjluo")
 [node name="Console Window" type="Window" parent="." unique_id=1205565824]
 oversampling_override = 1.0
 title = "Console"
-position = Vector2i(12, 36)
+position = Vector2i(0, 36)
 size = Vector2i(640, 360)
 
 [node name="Console BG" type="ColorRect" parent="Console Window" unique_id=2032005724]
@@ -82,7 +83,26 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 2
+theme_override_fonts/mono_font = ExtResource("5_yu5lb")
 bbcode_enabled = true
+text = "[font_size=10][code][color=deep_sky_blue]
+...........++++.....++++...........
+..........++++++...++++++..........				OS:
+..........+++++++++++++++..........				Host:
+....++..+++++++++++++++++++..++....				Kernal:
+..+++++++++++++++++++++++++++++++..				Uptime:
+.+++++++++++++++++++++++++++++++++.				Packages:
+..+++++++++++++++++++++++++++++++..				Shell:
+...++++*%%%##+++++++++##%%%*++++...				Display:
+...++++@#---#*++*@*++*#---#@++++...				Terminal:
+...++++#%---#+++#@#+++#---%#++++...				CPU:
+...++++++##*++++*#*++++*##++++++...				GPU:
+...##****+++++++++++++++++****##...				Memory:
+...+++++@*++++@@%%%@@++++*@+++++...				Swap:
+...+++++#%####@+++++@####%#+++++...				Disk:
+....+++++++++++++++++++++++++++....				Local IP:
+.....++++++++++++++++++++++++......				Locale:
+.........+++++++++++++++++.........				*insert colors*"
 scroll_following = true
 scroll_following_visible_characters = true
 selection_enabled = true

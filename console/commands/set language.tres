@@ -6,5 +6,6 @@
 script = ExtResource("1_x6bvy")
 name = "set language"
 description = "Sets the language of the app (doesn't work in console)."
-detailed_explaination = "Sets the language to what you typed in the console.#As an example you could type: [color=cyan]set language italian[/color] and that would change the language to Italian.#You can also type the language name in that language. #as an example you could type: [color=cyan]set language italiano[/color] and that would also change it to Italian."
+detailed_explaination = "[color=cyan]set language[/color]: Sets the language to what you typed in the console.As an example you could type: [color=cyan]set language italian[/color] and that would change the language to Italian.You can also type the language name in that language. as an example you could type: [color=cyan]set language italiano[/color] and that would also change it to Italian."
+function_to_trigger = "set_language"
 metadata/_custom_type_script = "uid://cjxafw1b1cxrp"
