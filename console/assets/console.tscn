@@ -4,8 +4,34 @@
 [ext_resource type="PackedScene" uid="uid://d3engya7r866b" path="res://console/assets/screen_message_label.tscn" id="2_hedou"]
 [ext_resource type="FontFile" uid="uid://eglbqyap1a4r" path="res://console/assets/fonts/COMICBD.TTF" id="2_sjluo"]
 [ext_resource type="Script" uid="uid://cayi03iwmj0ja" path="res://console/assets/desktop_thing.gd" id="3_hedou"]
+[ext_resource type="Script" uid="uid://cjxafw1b1cxrp" path="res://console/assets/command.gd" id="3_m5old"]
 [ext_resource type="Texture2D" uid="uid://dhvv1lgwrhj6r" path="res://icon.svg" id="4_lk25g"]
+[ext_resource type="Resource" uid="uid://ds30bi3j8j2go" path="res://console/commands/all spawnables.tres" id="4_msefj"]
+[ext_resource type="Resource" uid="uid://cmq2ja6pyvw7k" path="res://console/commands/change scene.tres" id="5_0r2w2"]
 [ext_resource type="FontFile" uid="uid://wq52qo180gc6" path="res://console/assets/fonts/courbd.ttf" id="5_yu5lb"]
+[ext_resource type="Resource" uid="uid://b6rrqxepoqkld" path="res://console/commands/clear.tres" id="6_y704l"]
+[ext_resource type="Resource" uid="uid://if73icl4cigr" path="res://console/commands/commands.tres" id="7_wrcak"]
+[ext_resource type="Resource" uid="uid://b01r5i4ncpmtu" path="res://console/commands/docs.tres" id="8_rqits"]
+[ext_resource type="Resource" uid="uid://csiqdkvx2in4u" path="res://console/commands/epic.tres" id="9_cud2b"]
+[ext_resource type="Resource" uid="uid://bqk8kcllp5th6" path="res://console/commands/explain.tres" id="10_xu84b"]
+[ext_resource type="Resource" uid="uid://ctqqr30xw7teh" path="res://console/commands/font_size.tres" id="11_61htj"]
+[ext_resource type="Resource" uid="uid://sgbtniipba3u" path="res://console/commands/gdfetch.tres" id="12_e8psf"]
+[ext_resource type="Resource" uid="uid://csplvbuxawhrb" path="res://console/commands/give.tres" id="13_0sut5"]
+[ext_resource type="Resource" uid="uid://b8nx44jipvdck" path="res://console/commands/haj.tres" id="14_t76bt"]
+[ext_resource type="Resource" uid="uid://djq8xu1u1ysho" path="res://console/commands/hello_world.tres" id="15_wqbs0"]
+[ext_resource type="Resource" uid="uid://d2ov3c8dm8i14" path="res://console/commands/help.tres" id="16_wpu3n"]
+[ext_resource type="Resource" uid="uid://i36np5yl4e0i" path="res://console/commands/languages.tres" id="17_5hfo7"]
+[ext_resource type="Resource" uid="uid://o132ibhyj4by" path="res://console/commands/markiplier.tres" id="18_wkaun"]
+[ext_resource type="Resource" uid="uid://bny82grst1euh" path="res://console/commands/noclip.tres" id="19_nc30h"]
+[ext_resource type="Resource" uid="uid://dtyycie12r2e8" path="res://console/commands/print to screen.tres" id="20_6pggl"]
+[ext_resource type="Resource" uid="uid://tf5mbgtew4mo" path="res://console/commands/print.tres" id="21_yr6hg"]
+[ext_resource type="Resource" uid="uid://dht1flp8dx22j" path="res://console/commands/restart console.tres" id="22_106lm"]
+[ext_resource type="Resource" uid="uid://bt3udoqet0o3o" path="res://console/commands/restart scene.tres" id="23_fl2cg"]
+[ext_resource type="Resource" uid="uid://clx5hrq4j485w" path="res://console/commands/sans.tres" id="24_35nx5"]
+[ext_resource type="Resource" uid="uid://b2bnwy4pw843v" path="res://console/commands/set language.tres" id="25_3y8rp"]
+[ext_resource type="Resource" uid="uid://dj1arw5j5dee2" path="res://console/commands/spawn.tres" id="26_4d2ky"]
+[ext_resource type="Resource" uid="uid://cq63ddp68y5iw" path="res://console/commands/unsans.tres" id="27_3rlou"]
+[ext_resource type="Resource" uid="uid://73oca0ivjjdf" path="res://console/commands/welcome.tres" id="28_ndisv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6k7n"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -19,6 +45,7 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [node name="Console" type="CanvasLayer" unique_id=1279527173]
 script = ExtResource("1_sg4m6")
 screen_text_message_label_scene = ExtResource("2_hedou")
+commands = Array[ExtResource("3_m5old")]([ExtResource("4_msefj"), ExtResource("5_0r2w2"), ExtResource("6_y704l"), ExtResource("7_wrcak"), ExtResource("8_rqits"), ExtResource("9_cud2b"), ExtResource("10_xu84b"), ExtResource("11_61htj"), ExtResource("12_e8psf"), ExtResource("13_0sut5"), ExtResource("14_t76bt"), ExtResource("15_wqbs0"), ExtResource("16_wpu3n"), ExtResource("17_5hfo7"), ExtResource("18_wkaun"), ExtResource("19_nc30h"), ExtResource("20_6pggl"), ExtResource("21_yr6hg"), ExtResource("22_106lm"), ExtResource("23_fl2cg"), ExtResource("24_35nx5"), ExtResource("25_3y8rp"), ExtResource("26_4d2ky"), ExtResource("27_3rlou"), ExtResource("28_ndisv")])
 comic_sans = ExtResource("2_sjluo")
 
 [node name="Console Window" type="Window" parent="." unique_id=1205565824]

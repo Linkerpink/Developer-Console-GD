@@ -13,7 +13,7 @@ config_version=5
 config/name="Developer Console"
 run/main_scene="uid://db7sqc0n44a8g"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://c03fslup7euax"
 
 [autoload]
 

@@ -16,7 +16,7 @@ var default_console_window_size : Vector2
 var u_text : String # The text from the user (line_edit.text)
 @export var room_scenes_path : String = "res://scenes/rooms/"
 
-var commands : Array[Command]
+@export var commands : Array[Command]
 var active_command : Command
 @export var spawnable_objects: Array[PackedScene]
 var user_font_size : int = 11
@@ -32,16 +32,16 @@ func _ready() -> void:
 	default_console_window_size = console_window.size
 	_close_console()
 	start_console()
-	_add_all_commands()
+	#_add_all_commands()
 
 
-func _add_all_commands():
-	var dir := DirAccess.open("res://console/commands")
-	if dir == null: printerr("Could not open folder"); return
-	dir.list_dir_begin()
-	for file: String in dir.get_files():
-		var resource := load(dir.get_current_dir() + "/" + file)
-		commands.append(resource)
+#func _add_all_commands():
+	#var dir := DirAccess.open("res://console/commands")
+	#if dir == null: printerr("Could not open folder"); return
+	#dir.list_dir_begin()
+	#for file: String in dir.get_files():
+		#var resource := load(dir.get_current_dir() + "/" + file)
+		#commands.append(resource)
 
 
 func _process(delta: float) -> void:
