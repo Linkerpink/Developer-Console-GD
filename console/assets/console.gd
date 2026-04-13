@@ -4,6 +4,9 @@ extends CanvasLayer
 @onready var console_window : Window = $"Console Window"
 @onready var console_text : RichTextLabel = $"Console Window/MarginContainer/Control/Console BG/ScrollContainer/MarginContainer/Console Text"
 @onready var line_edit : LineEdit = $"Console Window/MarginContainer/Control/HBoxContainer/LineEdit"
+@onready var auto_complete_selections : VBoxContainer = $AutoCompleteSelections
+@onready var auto_complete_item : PackedScene = load("res://console/assets/auto_complete_item.tscn")
+
 
 @onready var screen_text_message_container : VBoxContainer = $Control/MarginContainer/VBoxContainer
 @export var screen_text_message_label_scene : PackedScene
@@ -13,6 +16,7 @@ var open : bool = false
 
 var default_console_window_size : Vector2
 @export var default_console_font_size : int = 16
+
 var u_text : String # The text from the user (line_edit.text)
 @export var room_scenes_path : String = "res://scenes/rooms/"
 
@@ -53,6 +57,18 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("console_enter"):
 		_submit_to_console()
+	
+	if Input.is_action_just_pressed("ui_text_caret_up"):
+		set_caret_pos_to_text_length()
+	
+	if Input.is_action_just_pressed("ui_text_caret_down"):
+		set_caret_pos_to_text_length()
+	
+	if Input.is_action_just_pressed("console_type_keys") and console_window.visible:
+		_check_auto_complete()
+	
+	if Input.is_action_just_pressed("ui_text_indent") and console_window.visible:
+		_auto_complete()
 
 
 #region Common Console Functions
@@ -84,9 +100,9 @@ func _submit_to_console():
 			if not u_text == "":
 				print_to_console("[color=green]>> User: [/color]" + "[color=cyan]" + u_text + "[/color]", 0)
 	elif u_text == "":
-				print_error_to_console("Type something in the Console.", 0)
+		print_error_to_console("Type something in the Console.", 0)
 	else:
-				print_error_to_console(u_text + " is not a valid command!", 0)
+		print_error_to_console(u_text + " is not a valid command!", 0)
 	line_edit.clear()
 	line_edit.edit()
 
@@ -143,7 +159,6 @@ func _check_commands():
 		##return true
 	#endregion
 #endregion
-
 
 #region Command Functions
 func clear():
@@ -202,44 +217,44 @@ func go_to_docs():
 #region Language Commands
 func set_language():
 	print_to_console("language commands not set up.", 0.1)
-	#if _text.ends_with("english") or _text.ends_with("English"):
+	#if u_text.ends_with("english") or u_text.ends_with("English"):
 			#globals.set_language("english")
 			#
-		#elif _text.ends_with("dutch") or _text.ends_with("Dutch") or _text.ends_with("nederlands") or _text.ends_with("Nederlands"):
+		#elif u_text.ends_with("dutch") or u_text.ends_with("Dutch") or u_text.ends_with("nederlands") or u_text.ends_with("Nederlands"):
 			#globals.set_language("dutch")
 			#
-		#elif _text.ends_with("german") or _text.ends_with("German") or _text.ends_with("deutsch") or _text.ends_with("Deutsch"):
+		#elif u_text.ends_with("german") or u_text.ends_with("German") or u_text.ends_with("deutsch") or u_text.ends_with("Deutsch"):
 			#globals.set_language("german")
 		#
-		#elif _text.ends_with("french") or _text.ends_with("French") or _text.ends_with("français") or _text.ends_with("Français"):
+		#elif u_text.ends_with("french") or u_text.ends_with("French") or u_text.ends_with("français") or u_text.ends_with("Français"):
 			#globals.set_language("french") 
 		#
-		#elif _text.ends_with("spanish") or _text.ends_with("Spanish") or _text.ends_with("español") or _text.ends_with("Español"):
+		#elif u_text.ends_with("spanish") or u_text.ends_with("Spanish") or u_text.ends_with("español") or u_text.ends_with("Español"):
 			#globals.set_language("spanish")
 		#
-		#elif _text.ends_with("italian") or _text.ends_with("Italian") or _text.ends_with("italiano") or _text.ends_with("Italiano"):
+		#elif u_text.ends_with("italian") or u_text.ends_with("Italian") or u_text.ends_with("italiano") or u_text.ends_with("Italiano"):
 			#globals.set_language("italian")
 		#
-		#elif _text.ends_with("portuguese") or _text.ends_with("portugese") or _text.ends_with("Portuguese") or _text.ends_with("português") or _text.ends_with("Português"):
+		#elif u_text.ends_with("portuguese") or u_text.ends_with("portugese") or u_text.ends_with("Portuguese") or u_text.ends_with("português") or u_text.ends_with("Português"):
 			#globals.set_language("portugese")
 			#
-		#elif _text.ends_with("danish") or _text.ends_with("Danish") or _text.ends_with("dansk") or _text.ends_with("Dansk"):
+		#elif u_text.ends_with("danish") or u_text.ends_with("Danish") or u_text.ends_with("dansk") or u_text.ends_with("Dansk"):
 			#globals.set_language("danish")
 		#
-		#elif _text.ends_with("swedish") or _text.ends_with("Swedish") or _text.ends_with("svenska") or _text.ends_with("Svenska"):
+		#elif u_text.ends_with("swedish") or u_text.ends_with("Swedish") or u_text.ends_with("svenska") or u_text.ends_with("Svenska"):
 			#globals.set_language("swedish")
 		#
-		#elif _text.ends_with("finnish") or _text.ends_with("Finnish") or _text.ends_with("suomalainen") or _text.ends_with("Suomalainen"):
+		#elif u_text.ends_with("finnish") or u_text.ends_with("Finnish") or u_text.ends_with("suomalainen") or u_text.ends_with("Suomalainen"):
 			#globals.set_language("finnish")
 		#
-		#elif _text.ends_with("czech") or _text.ends_with("Czech") or _text.ends_with("čeština") or _text.ends_with("cestina"):
+		#elif u_text.ends_with("czech") or u_text.ends_with("Czech") or u_text.ends_with("čeština") or u_text.ends_with("cestina"):
 			#globals.set_language("czech")
 		#
-		#elif _text.ends_with("chinese") or _text.ends_with("Chinese") or _text.ends_with("國語"):
+		#elif u_text.ends_with("chinese") or u_text.ends_with("Chinese") or u_text.ends_with("國語"):
 			#globals.set_language("chinese")
 		#
 		## Easter egg languages
-		#elif _text.ends_with("minionese") or _text.ends_with("Minionese") or _text.ends_with("minion") or _text.ends_with("minion language"):
+		#elif u_text.ends_with("minionese") or u_text.ends_with("Minionese") or u_text.ends_with("minion") or u_text.ends_with("minion language"):
 			#globals.set_language("minionese")
 		#
 		#print_to_console("App language is set to: " + globals.language, 0.1)
@@ -406,6 +421,50 @@ func unsans_console():
 #endregion
 
 #endregion
+#endregion
+
+#region Auto Complete
+func _auto_complete():
+	if auto_complete_selections.get_child_count() > 0 and line_edit.text != "":
+		line_edit.text = str(auto_complete_selections.selected_node.name)
+		set_caret_pos_to_text_length()
+		
+		clear_auto_correct_selection()
+
+
+func _check_auto_complete():
+	u_text = line_edit.text
+	
+	for c : Command in commands:
+		for i in auto_complete_selections.get_children():
+			if not i.name.begins_with(u_text):
+				i.queue_free()
+		
+		if c.name.begins_with(u_text):
+			var _included = false
+			for i in auto_complete_selections.get_children():
+				if i.name == c.name:
+					_included = true
+			
+			if not _included and not c.easter_egg:
+				var _item = auto_complete_item.instantiate()
+				_item.name = c.name
+				auto_complete_selections.add_child(_item)
+				_item.find_child("Label").text = str(c.name)
+	
+	if u_text == "":
+		clear_auto_correct_selection()
+
+
+func clear_auto_correct_selection():
+	for i in auto_complete_selections.get_children():
+		i.queue_free()
+
+#endregion
+
+func set_caret_pos_to_text_length():
+	line_edit.caret_column = line_edit.text.length()
+
 
 func _on_console_text_meta_clicked(meta: Variant) -> void:
 	OS.shell_open(meta)

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b7dmms7ehcbt4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m5old"]
+bg_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+border_width_bottom = 2
+border_color = Color(0.15686275, 0.15686275, 0.15686275, 1)
+
+[node name="AutoCompleteItem" type="Control" unique_id=1661331226]
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panel" type="Panel" parent="." unique_id=1662795588]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m5old")
+
+[node name="Label" type="Label" parent="." unique_id=1979589193]
+self_modulate = Color(0.5882353, 0.5882353, 0.5882353, 1)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 304.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "explain"
+vertical_alignment = 1

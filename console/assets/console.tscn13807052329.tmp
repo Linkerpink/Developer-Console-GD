@@ -111,7 +111,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 2
-focus_behavior_recursive = 1
 theme_override_fonts/mono_font = ExtResource("5_yu5lb")
 bbcode_enabled = true
 text = "[font_size=10][code][color=deep_sky_blue]
@@ -145,12 +144,9 @@ alignment = 2
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "enter command"
-caret_blink = true
 
 [node name="Submit Button" type="Button" parent="Console Window/MarginContainer/Control/HBoxContainer" unique_id=1400132172]
 layout_mode = 2
-focus_mode = 0
-focus_behavior_recursive = 1
 text = "submit"
 
 [node name="Haj" type="Window" parent="." unique_id=1552903198]
