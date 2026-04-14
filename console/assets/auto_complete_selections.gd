@@ -2,10 +2,11 @@ extends VBoxContainer
 
 var selected_node : Control
 var selected : int
-@onready var console_window : Window = $"../Console Window"
+@onready var console_window : Window = %"Console Window"
+@onready var scroll_container : ScrollContainer = $".."
 @onready var before_scroll_timer : Timer = %BeforeScrollTimer
 @onready var scroll_timer : Timer = %ScrollTimer
-@onready var line_edit : LineEdit = $"../Console Window/MarginContainer/Control/HBoxContainer/LineEdit"
+@onready var line_edit : LineEdit = %LineEdit
 
 enum ScrollDirections{
 	Up,
@@ -38,13 +39,16 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_text_indent") and console_window.visible:
 		select(0)
 	
-	position = Vector2(console_window.position.x + 28, console_window.position.y + console_window.size.y + 8)
+	scroll_container.position = Vector2(console_window.position.x + 28, console_window.position.y + console_window.size.y + 8)
 	
 	if get_child_count() <= 0:
 		selected = -1
 	else:
 		if selected == -1:
 			select(0)
+	
+	if selected_node == null:
+		select(0)
 
 
 func select(_selection : int):
@@ -59,6 +63,8 @@ func select(_selection : int):
 		
 		selected = _selection
 		selected_node = get_children()[_selection]
+		
+		scroll_container.scroll_vertical = selected_node.position.y
 		
 		for c in get_children():
 			c.find_child("Label").self_modulate = Color(0.588, 0.588, 0.588, 1.0)

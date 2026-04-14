@@ -3,10 +3,9 @@ extends CanvasLayer
 #region Component Variables
 @onready var console_window : Window = $"Console Window"
 @onready var console_text : RichTextLabel = $"Console Window/MarginContainer/Control/Console BG/ScrollContainer/MarginContainer/Console Text"
-@onready var line_edit : LineEdit = $"Console Window/MarginContainer/Control/HBoxContainer/LineEdit"
-@onready var auto_complete_selections : VBoxContainer = $AutoCompleteSelections
+@onready var line_edit : LineEdit = %LineEdit
+@onready var auto_complete_selections : VBoxContainer = %AutoCompleteSelections
 @onready var auto_complete_item : PackedScene = load("res://console/assets/auto_complete_item.tscn")
-
 
 @onready var screen_text_message_container : VBoxContainer = $Control/MarginContainer/VBoxContainer
 @export var screen_text_message_label_scene : PackedScene
@@ -426,31 +425,56 @@ func unsans_console():
 #region Auto Complete
 func _auto_complete():
 	if auto_complete_selections.get_child_count() > 0 and line_edit.text != "":
-		line_edit.text = str(auto_complete_selections.selected_node.name)
+		if not line_edit.text.begins_with("explain"):
+			if not auto_complete_selections.selected_node.name == "explain":
+				line_edit.text = str(auto_complete_selections.selected_node.name)
+			else:
+				line_edit.text = str(auto_complete_selections.selected_node.name + " ")
+		else:
+			line_edit.text = str("explain " + auto_complete_selections.selected_node.name)
 		set_caret_pos_to_text_length()
-		
 		clear_auto_correct_selection()
+		_check_auto_complete()
 
 
 func _check_auto_complete():
 	u_text = line_edit.text
 	
-	for c : Command in commands:
+	if not u_text.begins_with("explain"):
 		for i in auto_complete_selections.get_children():
 			if not i.name.begins_with(u_text):
 				i.queue_free()
 		
-		if c.name.begins_with(u_text):
-			var _included = false
-			for i in auto_complete_selections.get_children():
-				if i.name == c.name:
-					_included = true
-			
-			if not _included and not c.easter_egg:
-				var _item = auto_complete_item.instantiate()
-				_item.name = c.name
-				auto_complete_selections.add_child(_item)
-				_item.find_child("Label").text = str(c.name)
+		for c : Command in commands:
+			if c.name.begins_with(u_text):
+				var _included = false
+				for i in auto_complete_selections.get_children():
+					if i.name == c.name:
+						_included = true
+				
+				if not _included and not c.easter_egg:
+					var _item = auto_complete_item.instantiate()
+					_item.name = c.name
+					auto_complete_selections.add_child(_item)
+					_item.find_child("Label").text = str(c.name)
+	
+	else:
+		for i in auto_complete_selections.get_children():
+			if not i.name.begins_with(u_text.replace("explain ","")):
+				i.queue_free()
+		
+		for c : Command in commands:
+			if c.name.begins_with(u_text.replace("explain ", "")):
+				var _included = false
+				for i in auto_complete_selections.get_children():
+					if i.name == c.name:
+						_included = true
+				
+				if not _included and not c.easter_egg:
+					var _item = auto_complete_item.instantiate()
+					_item.name = c.name
+					auto_complete_selections.add_child(_item)
+					_item.find_child("Label").text = str(c.name)
 	
 	if u_text == "":
 		clear_auto_correct_selection()
