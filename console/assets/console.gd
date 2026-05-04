@@ -54,20 +54,21 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("console_close"):
 		_close_console()
 	
-	if Input.is_action_just_pressed("console_enter"):
-		_submit_to_console()
-	
-	if Input.is_action_just_pressed("ui_text_caret_up"):
-		set_caret_pos_to_text_length()
-	
-	if Input.is_action_just_pressed("ui_text_caret_down"):
-		set_caret_pos_to_text_length()
-	
-	if Input.is_action_just_pressed("console_type_keys") and console_window.visible:
-		_check_auto_complete()
-	
-	if Input.is_action_just_pressed("ui_text_indent") and console_window.visible:
-		_auto_complete()
+	if open:
+		if Input.is_action_just_pressed("console_enter"):
+			_submit_to_console()
+		
+		if Input.is_action_just_pressed("ui_text_caret_up"):
+			set_caret_pos_to_text_length()
+		
+		if Input.is_action_just_pressed("ui_text_caret_down"):
+			set_caret_pos_to_text_length()
+		
+		if Input.is_action_just_pressed("console_type_keys") and console_window.visible:
+			_check_auto_complete()
+		
+		if Input.is_action_just_pressed("ui_text_indent") and console_window.visible:
+			_auto_complete()
 
 
 #region Common Console Functions
